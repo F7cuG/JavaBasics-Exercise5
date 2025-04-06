@@ -5,6 +5,15 @@ public class Main {
         public boolean esEscaleno(int ladoA,int ladoB, int ladoC){
             return(ladoA != ladoB && ladoA != ladoC && ladoB != ladoC);
         }
+        public boolean esIsosceles(int ladoA,int ladoB, int ladoC){
+            return(ladoA == ladoB && ladoC != ladoA || ladoB==ladoC && ladoA != ladoB || ladoA == ladoC && ladoB != ladoA);
+        }
+        public boolean esEquilatero(int ladoA,int ladoB,int ladoC){
+            return(ladoA == ladoB && ladoA==ladoC && ladoB==ladoC);
+        }
+        public boolean esRectangulo(int ladoA,int ladoB, int ladoC){
+            return ((ladoA*ladoA) + (ladoB*ladoB) == ladoC*ladoC ||(ladoA*ladoA) + (ladoC*ladoC) == ladoB*ladoB || (ladoC*ladoC) + (ladoB*ladoB) == ladoA*ladoA);
+        }
 
 
     }
@@ -19,7 +28,33 @@ public class Main {
 
         Triangulo miTriangulo = new Triangulo();
         miTriangulo.esEscaleno(ladoA,ladoB,ladoC);
-        System.out.println(miTriangulo.esEscaleno(ladoA,ladoB,ladoC));
+        if (miTriangulo.esEscaleno(ladoA,ladoB,ladoC)){
+            System.out.println("Es escaleno");
+        }else {
+            System.out.println("No es escaleno");
+        }
+
+        miTriangulo.esIsosceles(ladoA,ladoB,ladoC);
+        if (miTriangulo.esIsosceles(ladoA,ladoB,ladoC)){
+            System.out.println("Es isosceles");
+        }else{
+            System.out.println("No es isosceles");
+        }
+
+        miTriangulo.esEquilatero(ladoA,ladoB,ladoC);
+        if (miTriangulo.esEquilatero(ladoA,ladoB,ladoC)){
+            System.out.println("Es equilatero");
+        }else{
+            System.out.println("No es equilatero");
+        }
+
+        miTriangulo.esRectangulo(ladoA,ladoB,ladoC);
+        if (miTriangulo.esRectangulo(ladoA,ladoB,ladoC)){
+            System.out.println("Es rectangulo");
+        }else {
+            System.out.println("No es rectangulo");
+        }
+
 
 
     }
